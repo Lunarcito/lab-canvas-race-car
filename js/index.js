@@ -1,8 +1,6 @@
 const canvas = document.querySelector("canvas")
 const ctx = canvas.getContext("2d")
 
-//UPLOADING IMAGES
-
 //const road = new Image();
 //road.src = "./images/road.png"
 const car = new Image();
@@ -14,7 +12,6 @@ window.onload = () => {
     startGame();
   };
 }
-// Starting the game
 
 function startGame() {
 let car = new Car
@@ -32,7 +29,6 @@ document.addEventListener ("keydown", (e)=>{
   }
   })
 
-
 const update = () => {
 
 ctx.clearRect (0,0,canvas.width,canvas.height)
@@ -43,7 +39,6 @@ drawObstaculo()
 updateObstaculo()
 obstaculosArray.forEach((ele)=>{
 if (checkCollitions(ele,car)){
-  //console.log ("touched")
   drawGameOver ()
   endGame()
 }
@@ -51,13 +46,11 @@ if (checkCollitions(ele,car)){
 requestAnimationFrame(update)
 }
 requestAnimationFrame(update)
-
 }
 
 class Car{
 constructor (){
- 
-  this.X = (canvas.width/2)-25
+   this.X = (canvas.width/2)-25
   this.Y = 630
   this.speedX=1
   this.width = 50
